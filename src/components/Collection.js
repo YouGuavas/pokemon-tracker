@@ -1,5 +1,7 @@
-export default function Collection( ) {
+export default function Collection(props) {
   return(
-    <div></div>
+    <div className="collection grid">
+      {props.collection}
+    </div>
   )
 }
