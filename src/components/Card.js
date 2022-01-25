@@ -1,4 +1,4 @@
-import './Card.scss';
+import '../styles/Card.scss';
 
 export default function Card(props) {
   return(
@@ -11,6 +11,7 @@ export default function Card(props) {
 
         {/*Create the back of the card*/}
         <div className="card-back">
+          
 
         </div>
       </div>
