@@ -1,9 +1,11 @@
+@import './utilities/_variables';
+
 .card {
   width: 400px;
-  height: 400px;
+  height: 500px;
   background-color: transparent;
   perspective: 600px;
-  top:30%;
+  top:20%;
   left: 30%;
   position: relative;
 }
@@ -38,7 +40,7 @@
 }
 
 .card-front {
-  background-color: black;
+  background-color: $main;
   color: white;
 }
 

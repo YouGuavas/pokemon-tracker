@@ -13,8 +13,8 @@
   }
 }
 
-
+@import './utilities/variables';
 .App {
-  background-color: blue;
+  background-color: $background;
   height: 100vh;
 }
