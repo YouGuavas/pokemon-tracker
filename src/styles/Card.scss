@@ -2,7 +2,7 @@
 
 .card {
   width: $card-width;
-  height: 500px;
+  height: $card-height;
   background-color: transparent;
   perspective: 600px;
   top:20%;
@@ -12,10 +12,18 @@
 .carad {
   display: hidden;
 }
-.card-img {
+.back-img {
   position: absolute;
   height: 300px;
   width: 300px;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.front-img {
+  position: absolute;
+  height: $card-height;
+  width: $card-width;
   top:50%;
   left: 50%;
   transform: translate(-50%, -50%);

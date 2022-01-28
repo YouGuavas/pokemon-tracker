@@ -12,5 +12,8 @@ $grid-gap: '20px';
   flex: wrap;
 }
 .grid .item {
+  grid-column: span 1 / span 1;
   width: $card-width;
+  height: $card-height;
+  margin: 10px;
 }
