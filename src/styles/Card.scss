@@ -1,7 +1,7 @@
 @import '../utilities/_variables';
 
 .card {
-  width: 400px;
+  width: $card-width;
   height: 500px;
   background-color: transparent;
   perspective: 600px;

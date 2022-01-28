@@ -1,6 +1,16 @@
 @import '../utilities/variables';
 
+$grid-gap: '20px';
+
 .collection {
   height: 100%;
   background-color: white;
+}
+
+.grid {
+  display: flex;
+  flex: wrap;
+}
+.grid .item {
+  width: $card-width;
 }
