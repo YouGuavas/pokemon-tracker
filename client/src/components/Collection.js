@@ -3,7 +3,7 @@ import '../styles/Collection.scss';
 import Card from './Card';
 
 export default function Collection(props) {
-  const cards = ['Grookey', 'Thwackey', 'Rillaboom'];
+  const cards = ['Grookey', 'Thwackey', 'Rillaboom', '', '', ''];
   return(
     <div className="collection grid">
       {props.collection}

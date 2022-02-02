@@ -14,8 +14,8 @@
 }
 .back-img {
   position: absolute;
-  height: 300px;
-  width: 300px;
+  height: 200px;
+  width: 200px;
   top:50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -53,10 +53,13 @@
 .card-front {
   background-color: $main;
   color: white;
+  border: 8px solid $accent;
+
 }
 
 .card-back {
   background-color: white;
   color: black;
   transform: rotateY(180deg);
+
 }

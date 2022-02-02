@@ -3,13 +3,14 @@
 $grid-gap: '20px';
 
 .collection {
-  height: 100%;
+  height:auto;
   background-color: $background;
 }
 
 .grid {
-  display: flex;
-  flex: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  grid-template-rows: repeat(auto-fill, auto);
 }
 .grid .item {
   grid-column: span 1 / span 1;
