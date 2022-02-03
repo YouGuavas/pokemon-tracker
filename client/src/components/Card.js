@@ -5,6 +5,7 @@ export default function Card(props) {
     document.getElementById(index).classList.toggle('greyed');
 
   }
+  const checkBoxName = `Card${props.index}`;
   return(
     <div className="card-mat" key={props.index}>
       <div className="card">
@@ -23,7 +24,7 @@ export default function Card(props) {
           </div>
           </div>
       </div>
-      <p className="card-plaque"><span><input className="checkbox" type="checkbox" onClick={() => handleCheck(props.index)}/></span>{props.data.name}</p>
+      <form className="card-plaque"><input className="checkbox" type="checkbox" name={checkBoxName} id={checkBoxName} onClick={() => handleCheck(props.index)}/><label for={checkBoxName}>{props.data.name}</label></form>
     </div>
   )
 }

@@ -40,6 +40,7 @@
   background-color: rgba(30,30,30,0.7);
   color: white;
   padding: 2px 0 4px 0;
+  margin: 2px 0;
 }
 
 .carad {
@@ -104,8 +105,19 @@
 }
 
 .card-front {
-  background-color: $main;
+  background-color: blue;
+  height: $card-height - 1rem;
+  width: $card-width - 1rem;
+  border: 0.5rem solid $main;
   color: white;
+  @media only screen and (max-width:$md-max) and (min-width:$sm-max) {
+    height: $card-height-md - 1rem;
+    width: $card-width-md - 1rem;
+  }
+  @media only screen and (max-width:$sm-max) {
+    height: $card-height-sm - 1rem;
+    width: $card-width-sm - 1rem;
+   }
 }
 
 .card-back {

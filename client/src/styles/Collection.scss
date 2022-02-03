@@ -5,17 +5,24 @@ $grid-gap: '20px';
 .collection {
   height: auto;
   width: auto;
-  background-color: $background;
+  background-color: $main;
+  color: white;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(3, auto);
+  grid-template-columns: repeat(5, auto);
   grid-template-rows: repeat(auto-fill, auto);
   justify-content: space-evenly;
   justify-items: center;
   align-content: space-evenly;
   align-items: center;
+  @media only screen and (max-width:$md-max) and (min-width:$sm-max) {
+    grid-template-columns: repeat(4, auto);
+  }
+  @media only screen and (max-width:$sm-max) {
+    grid-template-columns: repeat(4, auto);
+   }
 }
 .grid .item {
   grid-column: span 1 / span 1;

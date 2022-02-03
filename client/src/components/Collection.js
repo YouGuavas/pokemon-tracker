@@ -65,9 +65,11 @@ src: "https://den-cards.pokellector.com/320/Kakuna.CRE.2.39008.thumb.png",
 have: false
 
 }];
+const count = 9;
   return(
     <div className="collection">
       <h1>{props.collection}</h1>
+      <h2>{count}/{cards.length} cards - {(count/cards.length)*100}% complete</h2>
       <div className="grid">
       {cards.map((item, index) => {
         return(
