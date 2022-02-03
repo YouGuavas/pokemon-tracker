@@ -3,7 +3,8 @@
 $grid-gap: '20px';
 
 .collection {
-  height:auto;
+  height: auto;
+  width: auto;
   background-color: $background;
 }
 
@@ -16,5 +17,11 @@ $grid-gap: '20px';
   grid-column: span 1 / span 1;
   width: $card-width;
   height: $card-height;
-  margin: 10px;
+  margin: $grid-gap;
+  @media only screen and (max-width:$md-max) {
+   margin: 3px;
+  }
+  @media only screen and (max-width:$sm-max) {
+    margin: 1px;
+   }
 }

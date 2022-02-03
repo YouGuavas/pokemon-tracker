@@ -8,26 +8,54 @@
   top:20%;
   left: 30%;
   position: relative;
+  @media only screen and (max-width:$md-max) and (min-width:$sm-max) {
+    height: $card-height-md;
+    width: $card-width-md;
+  }
+  @media only screen and (max-width:$sm-max) {
+    height: $card-height-sm;
+    width: $card-height-sm;
+   }
 }
 .carad {
   display: hidden;
 }
-.back-img {
+.front-img {
   position: absolute;
+
   height: 200px;
   width: 200px;
   top:50%;
   left: 50%;
   transform: translate(-50%, -50%);
+
+  @media only screen and (max-width:$md-max) and (min-width:$sm-max) {
+    height: 100px;
+    width: 100px;
+  }
+  @media only screen and (max-width:$sm-max) {
+    height: 50px;
+    width: 50px;
+   }
 }
-.front-img {
+.back-img {
   position: absolute;
+
   height: $card-height;
   width: $card-width;
   top:50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  @media only screen and (max-width:$md-max) and (min-width:$sm-max) {
+    height: $card-height-md;
+    width: $card-width-md;
+  }
+  @media only screen and (max-width:$sm-max) {
+    height: $card-height-sm;
+    width: $card-height-sm;
+   }
 }
+
 
 .card-inner {
   position:relative;
@@ -53,8 +81,6 @@
 .card-front {
   background-color: $main;
   color: white;
-  border: 8px solid $accent;
-
 }
 
 .card-back {
