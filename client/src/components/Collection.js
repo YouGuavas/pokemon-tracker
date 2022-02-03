@@ -12,7 +12,7 @@ export default function Collection(props) {
   }, {
     name:'Thwackey',
     src: "https://den-cards.pokellector.com/320/Kakuna.CRE.2.39008.thumb.png",
-    have: false
+    have: true
 
 }, {
   name:'Rillaboom',
@@ -32,7 +32,7 @@ export default function Collection(props) {
 },  {
   name:'Beedrill',
   src: "https://den-cards.pokellector.com/320/Kakuna.CRE.2.39008.thumb.png",
-  have: false
+  have: true
 
 }, {
   name:'Grookey',

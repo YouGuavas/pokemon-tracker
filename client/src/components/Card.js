@@ -12,14 +12,14 @@ export default function Card(props) {
       
         <div className="card-inner">
           {/*Create the front of the card*/}
-          <div className="card-front">
-            <img className="front-img" src={props.src} />
+          <div className={props.data.have ? "poke-front" : "card-front"}>
+            {props.data.have ? <img className="back-img" id={props.index} src={props.data.src} /> : <img className="front-img" src={props.src} />}
           </div>
 
           {/*Create the back of the card*/}
 
-          <div className="card-back">
-            {props.data.have ? <img className="back-img" id={props.index} src={props.data.src} /> : <img className="back-img greyed" id={props.index} src={props.data.src} />}
+          <div className={props.data.have ? "poke-back" : "card-back"}>
+            {props.data.have ? <img className="front-img" src={props.src} /> : <img className="back-img greyed" id={props.index} src={props.data.src} />}
 
           </div>
           </div>
