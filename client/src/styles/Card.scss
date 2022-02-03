@@ -1,5 +1,22 @@
 @import '../utilities/_variables';
 
+
+.card-mat {
+  height: auto;
+  width: auto;
+  padding: 3px 5px 1px 5px;
+  background: rgba(200, 200, 200, 1);
+  margin: 5px 0;
+  .checkbox {
+    margin: 0 8px;
+  }
+  @media only screen and (max-width:$md-max) and (min-width:$sm-max) {
+    
+  }
+  @media only screen and (max-width:$sm-max) {
+    border: 1px solid black;
+   }
+}
 .card {
   width: $card-width;
   height: $card-height;
@@ -12,28 +29,38 @@
   }
   @media only screen and (max-width:$sm-max) {
     height: $card-height-sm;
-    width: $card-height-sm;
+    width: $card-width-sm;
    }
 }
+.greyed {
+  opacity: 0.6;
+}
+
+.card-plaque {
+  background-color: rgba(30,30,30,0.7);
+  color: white;
+  padding: 2px 0 4px 0;
+}
+
 .carad {
   display: hidden;
 }
 .front-img {
   position: absolute;
 
-  height: 200px;
-  width: 200px;
+  height: $card-height/2;
+  width: $card-height/2;
   top:50%;
   left: 50%;
   transform: translate(-50%, -50%);
 
   @media only screen and (max-width:$md-max) and (min-width:$sm-max) {
-    height: 100px;
-    width: 100px;
+    height: $card-height-md/2;
+    width: $card-height-md/2;
   }
   @media only screen and (max-width:$sm-max) {
-    height: 50px;
-    width: 50px;
+    height: $card-height-sm/2;
+    width: $card-height-sm/2;
    }
 }
 .back-img {
@@ -50,7 +77,7 @@
   }
   @media only screen and (max-width:$sm-max) {
     height: $card-height-sm;
-    width: $card-height-sm;
+    width: $card-width-sm;
    }
 }
 
@@ -82,8 +109,8 @@
 }
 
 .card-back {
-  background-color: white;
-  color: black;
+  background-color: transparent;
+  color: white;
   transform: rotateY(180deg);
 
 }
