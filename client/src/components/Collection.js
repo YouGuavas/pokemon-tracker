@@ -5,8 +5,9 @@ import Card from './Card';
 export default function Collection(props) {
   const cards = ['Grookey', 'Thwackey', 'Rillaboom', '', '', ''];
   return(
-    <div className="collection grid">
-      {props.collection}
+    <div className="collection">
+      <h1>{props.collection}</h1>
+      <div className="grid">
       {cards.map((item, index) => {
         const gridRow = 1;
         const gridColumn = index+1;
@@ -16,6 +17,7 @@ export default function Collection(props) {
         </div>
         )
       })}
+      </div>
     </div>
   )
 }
