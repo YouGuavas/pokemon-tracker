@@ -25,10 +25,10 @@ export default function Card(props) {
           </div>
       </div>
       <form className="card-plaque">
-        <span className="checkbox-wrapper">
+        <div>
           <input className="checkbox" type="checkbox" name={checkBoxName} id={checkBoxName} onClick={() => handleCheck(props.index)}/>
-        </span>
-        <label for={checkBoxName}>{props.data.name}</label>
+          <label for={checkBoxName}>{props.data.name}</label>
+        </div>
       </form>
     </div>
   )
