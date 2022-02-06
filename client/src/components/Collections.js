@@ -6,7 +6,7 @@ export default function Collections() {
     <div>
 
       <select>
-        {collections.map((item) => (<option>{item}</option>))}
+        {collections.map((item, index) => (<option key={index}>{item}</option>))}
       </select>
 
     </div>

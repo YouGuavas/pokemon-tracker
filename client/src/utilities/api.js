@@ -1,5 +1,9 @@
+const api_uri = 'http://localhost:5000/';
+const axios = require('axios');
+
 const getCardsFromSet = (cardSet) => {
-  const cards = [
+
+  /*const cards = [
     {
       name:'Grookey',
       src: "https://den-cards.pokellector.com/320/Grookey.CRE.16.39020.thumb.png",
@@ -60,8 +64,11 @@ name:'Beedrill',
 src: "https://den-cards.pokellector.com/320/Kakuna.CRE.2.39008.thumb.png",
 have: false
 
-}];
-  return cards;
+}];*/
+  return axios(`${api_uri}set/${cardSet}`)
+    .then((res) => {
+      return res.data;
+    })
 }
 
 export {getCardsFromSet};
