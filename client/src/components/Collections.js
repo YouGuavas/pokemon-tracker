@@ -1,7 +1,8 @@
 import '../styles/Collections.scss';
 
-export default function Collections() {
+export default function Collections(props) {
   const collections = ['Chilling Reign', 'Evolving Skies']
+  console.log(props);
   return (
     <div>
 

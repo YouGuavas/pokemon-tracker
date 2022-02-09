@@ -2,15 +2,16 @@
 
 
 .card-mat {
-  height: auto;
+  height: $card-height*1.25;
   width: auto;
   padding: 0.2rem 0.4rem;
   background: rgba(200, 200, 200, 1);
   margin: 0.4rem 0;
   @media only screen and (max-width:$md-max) and (min-width:$sm-max) {
-    
+    height: $card-height-md*1.35;
   }
   @media only screen and (max-width:$sm-max) {
+    height: $card-height-sm*1.4;
     border: 0.1rem solid black;
    }
 }
@@ -18,15 +19,20 @@
   width: $card-width;
   height: $card-height;
   background-color: transparent;
+  margin: 0 auto 1rem auto;
   perspective: 600px;
   position: relative;
   @media only screen and (max-width:$md-max) and (min-width:$sm-max) {
     height: $card-height-md;
     width: $card-width-md;
+    margin: 0 auto 1.2rem auto;
+
   }
   @media only screen and (max-width:$sm-max) {
     height: $card-height-sm;
     width: $card-width-sm;
+    margin: 0 auto 1.2rem auto;
+
    }
 }
 .greyed {
@@ -35,27 +41,68 @@
 
 .card-plaque {
   background-color: rgba(30,30,30,0.7);
+  width: $card-width;
   color: white;
   padding: 0.2rem 0 0.2rem 0;
   margin: 0.2rem 0;
+  @media only screen and (max-width:$md-max) and (min-width:$sm-max) {
+    width: $card-width-md;
+  }
+  @media only screen and (max-width:$sm-max) {
+    width: $card-width-sm;
+   }
+  .label-wrapper {
+    height: 100%;
+  }
+
+
   input[type="checkbox"].checkbox {
+    display: none;
+    +label {
+      font-size: 1rem;
+    }
+  }
+
+  input[type="checkbox"].checkbox+label::before {
+    position: relative;
+    content: " ";
+    display: inline-block;
+    vertical-align: bottom;
+    height: 1rem;
+    width: 1rem;
+    border: 1px solid grey;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    background-color: $background;
+    margin: 0 0.2rem 0 0;
+  }
+  input[type="checkbox"]:checked+label::before {
+    content: "✔";
+    text-align: center;
+    line-height: 1rem;
+  }
+
+  /*input[type="checkbox"].checkbox {
     position: relative;
     background-color: $background;
     border-radius: 4px;
     height: 1rem;
     width: 1rem;
-    padding: 1px 3px;
-    margin: 0 0.4rem 0 0;
+    font-size: 0.7rem;
+    margin: 0 1rem;
+    text-align: center;
     appearance: none;
     &:checked {
       background: indigo;
       color: white;
+      margin: 0 1rem;
       &::before {
         content: '\2713';
+        line-height: 1rem;
       }
     }
 
-  }
+  }*/
   
 }
 
