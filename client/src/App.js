@@ -9,15 +9,23 @@ import React, {useEffect, useState} from 'react';
 
 function App() {
   const [cards, setCards] = useState([]);
-  const count = 35;
-  async function getCards() {
-    const cardList = await getCardsFromSet('CRE-Chilling-Reign');
-
-      setCards(cardList);
+  const [collection, setCollection] = useState('CRE-Chilling-Reign');
+  const count = 0;
+  async function getCards(coll) {
+    const cardList = await getCardsFromSet(coll);
+    setCards(cardList);
   }
+
+  function handleCollectionChange(coll) {
+    setCollection(coll);
+  }
+
+  useEffect(() => {
+    getCards(collection);
+  }, [collection]); 
   return (
-    <div className="App" onClick={() => getCards()}>
-      <Collections handleClick={() => getCards()}/>
+    <div className="App">
+      <Collections handleChange={(coll) => handleCollectionChange(coll)}/>
       <Collection collection="Chilling Reign" data={{collection: 'Chilling Reign', cards, count}} />
     </div>
   );
