@@ -3,22 +3,22 @@ import { useState } from 'react';
 
 
 export default function Card(props) {
-
-  const [pokeSrc, setPokeSrc] = useState(props.data.item.src);
   const [have, setHave] = useState(props.data.have);
-
 
   const handleCheck = (index) => {
     const thisCard = document.getElementById(index);
-    const altCard = document.getElementById(`${index}-alt`);
     thisCard.classList.toggle('greyed');
     if (have) {
       setHave(false);
       props.handleCount(props.count-1);
+      /*if unchecking a card that you previously owned/checked, 
+      decrement total count and re-flip that card*/
 
     } else {
       setHave(true);
       props.handleCount(props.count+1);
+      /*if checking a card that you previously did not own/check, 
+      increment total count and flip that card*/
     }
   }
   const checkBoxName = `Card${props.index}`;
@@ -29,7 +29,7 @@ export default function Card(props) {
         <div className="card-inner">
           {/*Create the front of the card*/}
           <div className={have ? "poke-front" : "card-front"}>
-            {have ? <img className="back-img" id={props.index} src={pokeSrc} /> : <img className="front-img" src={props.src} id={`${props.index}-alt`}/>}
+            {have ? <img className="back-img" id={props.index} src={props.data.item.src} /> : <img className="front-img" src={props.src} id={`${props.index}-alt`}/>}
           </div>
 
           {/*Create the back of the card*/}
