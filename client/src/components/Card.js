@@ -22,7 +22,6 @@ export default function Card(props) {
     }
   }
   const checkBoxName = `Card${props.index}`;
-  console.log(props.data);
   return(
     <div className="card-mat" key={props.index}>
       <div className="card">

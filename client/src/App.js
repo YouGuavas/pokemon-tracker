@@ -10,13 +10,15 @@ import React, {useEffect, useState} from 'react';
 function App() {
   const [cards, setCards] = useState([]);
   const [collection, setCollection] = useState('CRE-Chilling-Reign');
+  const [collectionName, setCollectionName] = useState('Chilling Reign');
   const count = 0;
   async function getCards(coll) {
     const cardList = await getCardsFromSet(coll);
     setCards(cardList);
   }
 
-  function handleCollectionChange(coll) {
+  function handleCollectionChange(coll, collName) {
+    setCollectionName(collName);
     setCollection(coll);
   }
 
@@ -25,8 +27,8 @@ function App() {
   }, [collection]); 
   return (
     <div className="App">
-      <Collections handleChange={(coll) => handleCollectionChange(coll)}/>
-      <Collection collection="Chilling Reign" data={{collection: 'Chilling Reign', cards, count}} />
+      <Collections handleChange={(coll, collName) => handleCollectionChange(coll, collName)}/>
+      <Collection collection={collectionName} data={{collection: collectionName || 'Chilling Reign', cards, count}} />
     </div>
   );
 }
