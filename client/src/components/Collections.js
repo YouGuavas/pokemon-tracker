@@ -1,3 +1,5 @@
+import React, {useEffect, useState} from 'react';
+
 import '../styles/Collections.scss';
 
 export default function Collections(props) {
@@ -9,7 +11,10 @@ export default function Collections(props) {
     props.handleChange(collectionId, collectionName);
   }
 
-
+  useEffect(async function() {
+    const collection = await collections;
+    props.handleChange(collection[0].id, collection[0].name);
+  }, [collections.length])
   
   return (
     <div>
