@@ -18,25 +18,28 @@ function App() {
     const cardList = await getCardsFromSet(coll);
     setCards(cardList);
   }
+  async function getSets() {
+    const setList = await getSetsFromDb();
+    setCollections(setList)
+  }
 
   function handleCollectionChange(coll, collName) {
     setCollectionName(collName);
     setCollection(coll);
   }
-  async function getSets() {
-    const setList = await getSetsFromDb();
-    setCollections(setList)
-    setCollection(setList[0].id);
-    setCollectionName(setList[0].name);
-  }
+
   useEffect(() => {
     getSets();
+  }, [collections.length]);
+
+
+  useEffect(() => {
     getCards(collection);
   }, [collection]); 
   return (
     <div className="App">
       <Collections collections={collections} handleChange={(coll, collName) => handleCollectionChange(coll, collName)}/>
-      <Collection data={{collection: collectionName, cards, count}} />
+      {cards.length > 0 ? <Collection data={{collection: collectionName, cards, count}} /> : null}
     </div>
   );
 }
