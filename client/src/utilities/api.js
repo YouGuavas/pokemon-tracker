@@ -7,5 +7,11 @@ const getCardsFromSet = (cardSet) => {
       return res.data;
     })
 }
+const getSets = () => {
+  return axios(`${api_uri}sets/`)
+    .then((res) => {
+      return res.data;
+    })
+}
 
-export {getCardsFromSet};
+export {getCardsFromSet, getSets};
