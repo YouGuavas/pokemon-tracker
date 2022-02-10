@@ -7,11 +7,11 @@ const getCardsFromSet = (cardSet) => {
       return res.data;
     })
 }
-const getSets = () => {
+const getSetsFromDb = () => {
   return axios(`${api_uri}sets/`)
     .then((res) => {
       return res.data;
     })
 }
 
-export {getCardsFromSet, getSets};
+export {getCardsFromSet, getSetsFromDb};
