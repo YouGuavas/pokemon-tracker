@@ -10,13 +10,15 @@ export default function Card(props) {
     thisCard.classList.toggle('greyed');
     if (have) {
       setHave(false);
-      props.handleCount(props.count-1);
+      const newCount = props.count - 1;
+      if (newCount >= 0) props.handleCount(props.count-1);
       /*if unchecking a card that you previously owned/checked, 
       decrement total count and re-flip that card*/
 
     } else {
       setHave(true);
-      props.handleCount(props.count+1);
+      const newCount = props.count + 1;
+      if (newCount <= props.total) props.handleCount(newCount);
       /*if checking a card that you previously did not own/check, 
       increment total count and flip that card*/
     }
@@ -25,7 +27,6 @@ export default function Card(props) {
   return(
     <div className="" key={props.index}>
       <div className="card">
-      
         <div className="card-inner">
           {/*Create the front of the card*/}
           <div className={have ? "poke-front" : "card-front"}>
@@ -40,12 +41,12 @@ export default function Card(props) {
           </div>
           
         </div>
-        <form className="card-plaque">
+        <div className="card-plaque">
         <div className="label-wrapper">
           <input className="checkbox" type="checkbox" name={checkBoxName} id={checkBoxName} onChange={() => handleCheck(props.index)}/>
           <label for={checkBoxName}>{props.data.item.name}</label>
         </div>
-      </form>
+      </div>
       </div>
     </div>
   )

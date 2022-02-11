@@ -13,7 +13,7 @@ function App() {
   const [collection, setCollection] = useState('25TH-Celebrations');
   const [collectionName, setCollectionName] = useState('Celebrations');
 
-  const count = 0;
+  const [count, setCount] = useState(0);
   async function getCards(coll) {
     const cardList = await getCardsFromSet(coll);
     setCards(cardList);
@@ -26,6 +26,7 @@ function App() {
   function handleCollectionChange(coll, collName) {
     setCollectionName(collName);
     setCollection(coll);
+    setCount(0);
   }
 
   useEffect(() => {
@@ -39,7 +40,7 @@ function App() {
   return (
     <div className="App">
       <Collections collections={collections} handleChange={(coll, collName) => handleCollectionChange(coll, collName)}/>
-      {cards.length > 0 ? <Collection data={{collection: collectionName, cards, count}} /> : null}
+      {cards.length > 0 ? <Collection setCount={setCount} data={{collection: collectionName, cards, count}} /> : null}
     </div>
   );
 }
