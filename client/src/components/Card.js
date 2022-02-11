@@ -23,7 +23,7 @@ export default function Card(props) {
   }
   const checkBoxName = `Card${props.index}`;
   return(
-    <div className="card-mat" key={props.index}>
+    <div className="" key={props.index}>
       <div className="card">
       
         <div className="card-inner">
@@ -38,14 +38,15 @@ export default function Card(props) {
             {have ? <img className="front-img" src={props.src} id={`${props.index}-alt`} /> : <img className="back-img greyed" id={props.index} src={props.data.item.src} />}
 
           </div>
-          </div>
-      </div>
-      <form className="card-plaque">
+          
+        </div>
+        <form className="card-plaque">
         <div className="label-wrapper">
           <input className="checkbox" type="checkbox" name={checkBoxName} id={checkBoxName} onChange={() => handleCheck(props.index)}/>
           <label for={checkBoxName}>{props.data.item.name}</label>
         </div>
       </form>
+      </div>
     </div>
   )
 }

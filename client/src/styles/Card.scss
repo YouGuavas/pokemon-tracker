@@ -1,20 +1,20 @@
 @import '../utilities/_variables';
 
 
-.card-mat {
-  height: $card-height*1.25;
+/*.card-mat {
+  height: $card-height;
   width: auto;
   padding: 0.2rem 0.4rem;
   background: rgba(200, 200, 200, 1);
   margin: 0.4rem 0;
   @media only screen and (max-width:$md-max) and (min-width:$sm-max) {
-    height: $card-height-md*1.35;
+    height: $card-height-md;
   }
   @media only screen and (max-width:$sm-max) {
-    height: $card-height-sm*1.4;
+    height: $card-height-sm;
     border: 0.1rem solid black;
    }
-}
+}*/
 .card {
   width: $card-width;
   height: $card-height;
@@ -40,6 +40,9 @@
 }
 
 .card-plaque {
+  position: absolute;
+  z-index: 1;
+  top: 60%;
   background-color: rgba(30,30,30,0.7);
   width: $card-width;
   color: white;
