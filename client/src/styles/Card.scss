@@ -42,7 +42,7 @@
 .card-plaque {
   position: absolute;
   z-index: 1;
-  top: 60%;
+  bottom: 10%;
   background-color: rgba(30,30,30,0.7);
   width: $card-width;
   color: white;
@@ -57,12 +57,19 @@
   .label-wrapper {
     height: 100%;
   }
+  
 
 
   input[type="checkbox"].checkbox {
     display: none;
     +label {
       font-size: 1rem;
+      @media only screen and (max-width:$md-max) and (min-width:$sm-max) {
+        font-size: $font-size-md;
+      }
+      @media only screen and (max-width:$sm-max) {
+        font-size: $font-size-sm;
+       }
     }
   }
 

@@ -11,11 +11,11 @@ export default function Collection(props) {
   const count = props.data.count;
   const collection = props.data.collection;
   const cards = props.data.cards;
-  let have = false;
+  const have = false;
   return(
     <div className="collection">
       <h1>{collection}</h1>
-      <h2>{count}/{cards.length} cards - {(count/cards.length).toFixed(4)*100}% complete</h2>
+      <h2>{count}/{cards.length} cards - {(100*(count/cards.length)).toFixed(2)}% complete</h2>
       <div className="grid">
       {cards.map((item, index) => {
         return(
