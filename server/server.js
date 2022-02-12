@@ -1,4 +1,6 @@
 const express = require('express');
+const bodyParser = require('body-parser');
+
 const app = express();
 const cors = require('cors');
 const db_tools = require('./db/connection');
