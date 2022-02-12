@@ -10,13 +10,15 @@ export default function Card(props) {
     thisCard.classList.toggle('greyed');
     if (have) {
       setHave(false);
+      props.removeFromCollection(index);
       const newCount = props.count - 1;
-      if (newCount >= 0) props.handleCount(props.count-1);
+      if (newCount >= 0) props.handleCount(newCount);
       /*if unchecking a card that you previously owned/checked, 
       decrement total count and re-flip that card*/
 
     } else {
       setHave(true);
+      props.addToCollection(index);
       const newCount = props.count + 1;
       if (newCount <= props.total) props.handleCount(newCount);
       /*if checking a card that you previously did not own/check, 

@@ -7,11 +7,25 @@ import Card from './Card';
 
 
 export default function Collection(props) {
+  const cardsIHave = props.data.cardsIHave;
 
   const count = props.data.count;
   const collection = props.data.collection;
   const cards = props.data.cards;
   const have = false;
+
+  const addToCollection = (card) => {
+    cardsIHave.push(card);
+    props.setCardsIHave(cardsIHave.sort((a,b) => a-b));
+    console.log(card, cardsIHave);
+  };
+  const removeFromCollection = (card) => {
+    const ind = cardsIHave.indexOf(card);
+    cardsIHave.splice(ind, 1);
+    props.setCardsIHave(cardsIHave);
+    console.log(card, cardsIHave);
+
+  }
   return(
     <div className="collection">
       <h1>{collection}</h1>
@@ -20,7 +34,11 @@ export default function Collection(props) {
       {cards.map((item, index) => {
         return(
         <div key={index} className='item'>
-          <Card data={{item, have}} count={count} total={cards.length} handleCount={props.setCount} index={index} src='https://www.popsockets.com/dw/image/v2/BFSM_PRD/on/demandware.static/-/Sites-popsockets-master-catalog/default/dw9eb9511a/images/hi-res/Poke-Ball-Gloss_01_Top-View.png?sw=800&sh=800' />
+                  {cardsIHave.indexOf(index) != -1 ? 
+                  <Card data={{item, have:true}} addToCollection={addToCollection} removeFromCollection={removeFromCollection} count={count} total={cards.length} handleCount={props.setCount} index={index} src='https://www.popsockets.com/dw/image/v2/BFSM_PRD/on/demandware.static/-/Sites-popsockets-master-catalog/default/dw9eb9511a/images/hi-res/Poke-Ball-Gloss_01_Top-View.png?sw=800&sh=800' />
+                  :
+                  <Card data={{item, have:false}} addToCollection={addToCollection} removeFromCollection={removeFromCollection} count={count} total={cards.length} handleCount={props.setCount} index={index} src='https://www.popsockets.com/dw/image/v2/BFSM_PRD/on/demandware.static/-/Sites-popsockets-master-catalog/default/dw9eb9511a/images/hi-res/Poke-Ball-Gloss_01_Top-View.png?sw=800&sh=800' />
+        }
         </div>
         )
       })}

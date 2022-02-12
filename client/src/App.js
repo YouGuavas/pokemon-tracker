@@ -10,6 +10,7 @@ import React, {useEffect, useState} from 'react';
 function App() {
   const [cards, setCards] = useState([]);
   const [collections, setCollections] = useState([]);
+  const [cardsIHave, setCardsIHave] = useState([]);
   const [collection, setCollection] = useState('25TH-Celebrations');
   const [collectionName, setCollectionName] = useState('Celebrations');
 
@@ -26,7 +27,8 @@ function App() {
   function handleCollectionChange(coll, collName) {
     setCollectionName(collName);
     setCollection(coll);
-    setCount(0);
+    setCardsIHave([]);
+    setCount(cardsIHave.length);
   }
 
   useEffect(() => {
@@ -40,7 +42,7 @@ function App() {
   return (
     <div className="App">
       <Collections collections={collections} handleChange={(coll, collName) => handleCollectionChange(coll, collName)}/>
-      {cards.length > 0 ? <Collection setCount={setCount} data={{collection: collectionName, cards, count}} /> : null}
+      {cards.length > 0 ? <Collection setCount={setCount} setCardsIHave={setCardsIHave} data={{collection: collectionName, cards, count, cardsIHave}} /> : null}
     </div>
   );
 }
