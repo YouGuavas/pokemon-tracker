@@ -12,19 +12,15 @@ export default function Collection(props) {
   const count = props.data.count;
   const collection = props.data.collection;
   const cards = props.data.cards;
-  const have = false;
 
   const addToCollection = (card) => {
     cardsIHave.push(card);
     props.setCardsIHave(cardsIHave.sort((a,b) => a-b));
-    console.log(card, cardsIHave);
   };
   const removeFromCollection = (card) => {
     const ind = cardsIHave.indexOf(card);
     cardsIHave.splice(ind, 1);
     props.setCardsIHave(cardsIHave);
-    console.log(card, cardsIHave);
-
   }
   return(
     <div className="collection">

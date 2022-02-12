@@ -1,20 +1,5 @@
 @import '../utilities/_variables';
 
-
-/*.card-mat {
-  height: $card-height;
-  width: auto;
-  padding: 0.2rem 0.4rem;
-  background: rgba(200, 200, 200, 1);
-  margin: 0.4rem 0;
-  @media only screen and (max-width:$md-max) and (min-width:$sm-max) {
-    height: $card-height-md;
-  }
-  @media only screen and (max-width:$sm-max) {
-    height: $card-height-sm;
-    border: 0.1rem solid black;
-   }
-}*/
 .card {
   width: $card-width;
   height: $card-height;
@@ -91,28 +76,6 @@
     text-align: center;
     line-height: 1rem;
   }
-
-  /*input[type="checkbox"].checkbox {
-    position: relative;
-    background-color: $background;
-    border-radius: 4px;
-    height: 1rem;
-    width: 1rem;
-    font-size: 0.7rem;
-    margin: 0 1rem;
-    text-align: center;
-    appearance: none;
-    &:checked {
-      background: indigo;
-      color: white;
-      margin: 0 1rem;
-      &::before {
-        content: '\2713';
-        line-height: 1rem;
-      }
-    }
-
-  }*/
   
 }
 
