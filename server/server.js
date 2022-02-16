@@ -13,6 +13,7 @@ const port = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 app.use(require('./routes/sets'));
+app.use(require('./routes/basic'));
 
 
 app.listen(port, () => {
