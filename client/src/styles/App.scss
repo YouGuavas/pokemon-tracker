@@ -1,6 +1,4 @@
-.App {
-  text-align: center;
-}
+@import '../utilities/_variables';
 
 .App-logo {
   height: 40vmin;
@@ -13,8 +11,9 @@
   }
 }
 
-@import '../utilities/variables';
 .App {
+  text-align: center;
+
   background-color: $main;
   height: auto;
   padding: 75px 0;

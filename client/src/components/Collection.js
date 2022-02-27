@@ -26,6 +26,7 @@ export default function Collection(props) {
     <div className="collection">
       <h1>{collection}</h1>
       <h2>{count}/{cards.length} cards - {(100*(count/cards.length)).toFixed(2)}% complete</h2>
+      <button className="submit-button">Submit</button>
       <div className="grid">
       {cards.map((item, index) => {
         return(

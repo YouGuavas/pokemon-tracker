@@ -1,4 +1,4 @@
-@import '../utilities/variables';
+@import '../utilities/_variables';
 
 $grid-gap: '20px';
 
@@ -7,6 +7,16 @@ $grid-gap: '20px';
   width: auto;
   background-color: lightslategrey;
   color: white;
+}
+.submit-button {
+  margin-bottom: 10px;
+  background-color: $background;
+  color: white;
+  padding: 1rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  border-radius: 0.5rem;
+  border: 1px solid white;
 }
 
 .grid {
