@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 $main: darkblue;
 $accent: #e3e030;
 $background: rgb(0, 0, 220);
@@ -5,11 +7,11 @@ $background: rgb(0, 0, 220);
 $card-width: 10rem;
 $card-height: 15rem;
 
-$card-width-md: (3/4) * $card-width;
-$card-height-md: (3/4) * $card-height;
+$card-width-md: math.div(3, 4) * $card-width;
+$card-height-md: math.div(3, 4) * $card-height;
 
-$card-width-sm: (2/3) * $card-width;
-$card-height-sm: (2/3) * $card-height;
+$card-width-sm: math.div(2, 3) * $card-width;
+$card-height-sm: math.div(2, 3) * $card-height;
 
 $md-max: 992px;
 $sm-max: 768px;

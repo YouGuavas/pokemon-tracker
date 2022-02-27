@@ -1,3 +1,5 @@
+@use 'sass:math';
+
 @import '../utilities/_variables';
 
 .card {
@@ -84,19 +86,19 @@
 }
 .front-img {
   position: absolute;
-  height: $card-height/2;
-  width: $card-height/2;
+  height: math.div($card-height, 2);
+  width: math.div($card-height, 2);
   top:50%;
   left: 50%;
   transform: translate(-50%, -50%);
 
   @media only screen and (max-width:$md-max) and (min-width:$sm-max) {
-    height: $card-height-md/2;
-    width: $card-height-md/2;
+    height: math.div($card-height-md, 2);
+    width: math.div($card-height-md, 2);
   }
   @media only screen and (max-width:$sm-max) {
-    height: $card-height-sm/2;
-    width: $card-height-sm/2;
+    height: math.div($card-height-sm, 2);
+    width: math.div($card-height-sm, 2);
    }
 }
 .back-img {
