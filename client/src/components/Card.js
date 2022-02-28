@@ -45,7 +45,7 @@ export default function Card(props) {
         </div>
         <div className="card-plaque">
         <div className="label-wrapper">
-          <input className="checkbox" type="checkbox" name={checkBoxName} id={checkBoxName} onChange={() => handleCheck(props.index)}/>
+          <input className="checkbox" type="checkbox" defaultChecked={props.checked} name={checkBoxName} id={checkBoxName} onChange={() => handleCheck(props.index)}/>
           <label for={checkBoxName}>{props.data.item.name}</label>
         </div>
       </div>

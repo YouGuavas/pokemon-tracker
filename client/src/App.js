@@ -10,11 +10,11 @@ import React, {useEffect, useState} from 'react';
 function App() {
   const [cards, setCards] = useState([]);
   const [collections, setCollections] = useState([]);
-  let cardsIHave = [];
   const [collection, setCollection] = useState('25TH-Celebrations');
   const [collectionName, setCollectionName] = useState('Celebrations');
+  let cardsIHave = JSON.parse(localStorage['cardsIHave'])[collectionName] || [];
 
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(cardsIHave.length);
   async function getCards(coll) {
     const cardList = await getCardsFromSet(coll);
     setCards(cardList);
@@ -27,11 +27,11 @@ function App() {
   function handleCollectionChange(coll, collName) {
     setCollectionName(collName);
     setCollection(coll);
-    cardsIHave = [];
+    cardsIHave = JSON.parse(localStorage['cardsIHave'])[collectionName] || [];
     setCount(cardsIHave.length);
   }
   function handleCardsIHave(myCards) {
-    cardsIHave = myCards;
+    cardsIHave = localStorage.getItem('cardsIHave'[collectionName]) || myCards;
     console.log(cardsIHave, myCards)
   }
 

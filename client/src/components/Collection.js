@@ -1,12 +1,11 @@
 
 import '../styles/Collection.scss';
-
+import {useState} from 'react';
 import Card from './Card';
 
 
 export default function Collection(props) {
-  const cardsIHave = props.data.cardsIHave;
-  //console.log(cardsIHave);
+  const [cardsIHave, setCardsIHave] = useState(props.data.cardsIHave);
 
   const count = props.data.count;
   const collection = props.data.collection;
@@ -23,8 +22,7 @@ export default function Collection(props) {
   }
 
   const saveCards = (cards) => {
-    console.log(cards);
-    //localStorage.setItem('cardsIHave'[collection], cards);
+    localStorage.setItem('cardsIHave', JSON.stringify({[collection]: cards}));
   }
   return(
     <div className="collection">
@@ -36,9 +34,9 @@ export default function Collection(props) {
         return(
         <div key={index} className='item'>
                   {cardsIHave.indexOf(index) !== -1 ? 
-                  <Card data={{item, have:true}} addToCollection={addToCollection} removeFromCollection={removeFromCollection} count={count} total={cardsInCollection.length} handleCount={props.setCount} index={index} src='https://www.popsockets.com/dw/image/v2/BFSM_PRD/on/demandware.static/-/Sites-popsockets-master-catalog/default/dw9eb9511a/images/hi-res/Poke-Ball-Gloss_01_Top-View.png?sw=800&sh=800' />
+                  <Card data={{item, have:true}} checked={true} addToCollection={addToCollection} removeFromCollection={removeFromCollection} count={count} total={cardsInCollection.length} handleCount={props.setCount} index={index} src='https://www.popsockets.com/dw/image/v2/BFSM_PRD/on/demandware.static/-/Sites-popsockets-master-catalog/default/dw9eb9511a/images/hi-res/Poke-Ball-Gloss_01_Top-View.png?sw=800&sh=800' />
                   :
-                  <Card data={{item, have:false}} addToCollection={addToCollection} removeFromCollection={removeFromCollection} count={count} total={cardsInCollection.length} handleCount={props.setCount} index={index} src='https://www.popsockets.com/dw/image/v2/BFSM_PRD/on/demandware.static/-/Sites-popsockets-master-catalog/default/dw9eb9511a/images/hi-res/Poke-Ball-Gloss_01_Top-View.png?sw=800&sh=800' />
+                  <Card data={{item, have:false}} checked={false} addToCollection={addToCollection} removeFromCollection={removeFromCollection} count={count} total={cardsInCollection.length} handleCount={props.setCount} index={index} src='https://www.popsockets.com/dw/image/v2/BFSM_PRD/on/demandware.static/-/Sites-popsockets-master-catalog/default/dw9eb9511a/images/hi-res/Poke-Ball-Gloss_01_Top-View.png?sw=800&sh=800' />
         }
         </div>
         )
