@@ -32,6 +32,7 @@ function App() {
   }
   function handleCardsIHave(myCards) {
     cardsIHave = myCards;
+    console.log(cardsIHave, myCards)
   }
 
   useEffect(() => {
