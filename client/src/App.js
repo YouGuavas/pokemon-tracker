@@ -13,6 +13,7 @@ function App() {
   const [collection, setCollection] = useState('25TH-Celebrations');
   const [collectionName, setCollectionName] = useState('Celebrations');
   let exampleCards = [];
+  if (localStorage['cardsIHave']) exampleCards = JSON.parse(localStorage['cardsIHave'])[collectionName];
   const [cardsIHave, setCardsIHave] = useState(exampleCards);
   const [count, setCount] = useState(cardsIHave.length);
   async function getCards(coll) {
@@ -25,7 +26,12 @@ function App() {
   }
 
   async function handleCollectionChange(coll, collName) {
-    //setCardsIHave(localStorage['cardsIHave'] ? JSON.parse(localStorage['cardsIHave'])[collName] : []);
+    if (JSON.parse(localStorage['cardsIHave'])[collName]) {
+      setCardsIHave(JSON.parse(localStorage['cardsIHave'])[collName])
+
+    } else {
+      setCardsIHave([])
+    }
     setMyCollections(coll, collName);
     setCount(cardsIHave.length);
   }
