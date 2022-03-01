@@ -13,11 +13,6 @@ function App() {
   const [collection, setCollection] = useState('25TH-Celebrations');
   const [collectionName, setCollectionName] = useState('Celebrations');
   let exampleCards = [];
-  if (localStorage['cardsIHave']) {
-    JSON.parse(localStorage['cardsIHave']).map((item, index) => {
-      if (item.title === collectionName) console.log('blachghagohaer'+item.cards)//exampleCards = item.cards;
-    })
-  }
   const [cardsIHave, setCardsIHave] = useState(exampleCards);
   const [count, setCount] = useState(cardsIHave.length);
   async function getCards(coll) {
