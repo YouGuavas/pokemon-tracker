@@ -12,8 +12,13 @@ function App() {
   const [collections, setCollections] = useState([]);
   const [collection, setCollection] = useState('25TH-Celebrations');
   const [collectionName, setCollectionName] = useState('Celebrations');
-  let cardsIHave = JSON.parse(localStorage['cardsIHave'])[collectionName] || [];
-
+  let exampleCards = [];
+  if (localStorage['cardsIHave']) {
+    JSON.parse(localStorage['cardsIHave']).map((item, index) => {
+      if (item.title === collectionName) console.log('blachghagohaer'+item.cards)//exampleCards = item.cards;
+    })
+  }
+  const [cardsIHave, setCardsIHave] = useState(exampleCards);
   const [count, setCount] = useState(cardsIHave.length);
   async function getCards(coll) {
     const cardList = await getCardsFromSet(coll);
@@ -24,15 +29,19 @@ function App() {
     setCollections(setList)
   }
 
-  function handleCollectionChange(coll, collName) {
-    setCollectionName(collName);
-    setCollection(coll);
-    cardsIHave = JSON.parse(localStorage['cardsIHave'])[collectionName] || [];
+  async function handleCollectionChange(coll, collName) {
+    //setCardsIHave(localStorage['cardsIHave'] ? JSON.parse(localStorage['cardsIHave'])[collName] : []);
+    setMyCollections(coll, collName);
     setCount(cardsIHave.length);
   }
+  function setMyCollections (coll, collName) {
+    setCollectionName(collName);
+    setCollection(coll);
+  }
+
+
   function handleCardsIHave(myCards) {
-    cardsIHave = localStorage.getItem('cardsIHave'[collectionName]) || myCards;
-    console.log(cardsIHave, myCards)
+    //cardsIHave = localStorage.getItem('cardsIHave'[collectionName]) || myCards;
   }
 
   useEffect(() => {

@@ -22,7 +22,26 @@ export default function Collection(props) {
   }
 
   const saveCards = (cards) => {
-    localStorage.setItem('cardsIHave', JSON.stringify({[collection]: cards}));
+    if (localStorage['cardsIHave']) {
+      const myCards = JSON.parse(localStorage['cardsIHave']);
+      let existingCollections = [];
+      myCards.map((item, index) => {
+        if (item.title === collection) {
+          return
+        }
+        existingCollections.push(item.title);
+      })
+      if (existingCollections.indexOf(collection) === -1) {
+        console.log(existingCollections, collection);
+        myCards.push({title: collection, cards: cards.sort((a,b) => a-b)})
+        //localStorage.setItem('cardsIHave', JSON.stringify(myCards));
+      }
+    } else {
+      const addToCards = [{'title': collection, cards: cards}];
+      localStorage.setItem('cardsIHave', JSON.stringify(addToCards));
+    }
+    
+   // localStorage.setItem('cardsIHave', JSON.stringify({[collection]: cards}));
   }
   return(
     <div className="collection">
