@@ -3,13 +3,13 @@ import { useState } from 'react';
 
 
 export default function Card(props) {
-  const [have, setHave] = useState(props.data.have);
-
+  //const [have, setHave] = useState(props.data.have);
+  let have = props.data.have;
   const handleCheck = (index) => {
     const thisCard = document.getElementById(index);
     thisCard.classList.toggle('greyed');
     if (have) {
-      setHave(false);
+      have = false;
       props.removeFromCollection(index);
       const newCount = props.count - 1;
       if (newCount >= 0) props.handleCount(newCount);
@@ -17,7 +17,7 @@ export default function Card(props) {
       decrement total count and re-flip that card*/
 
     } else {
-      setHave(true);
+      have = true;
       props.addToCollection(index);
       const newCount = props.count + 1;
       if (newCount <= props.total) props.handleCount(newCount);
@@ -45,7 +45,7 @@ export default function Card(props) {
         </div>
         <div className="card-plaque">
         <div className="label-wrapper">
-          <input className="checkbox" type="checkbox" defaultChecked={props.checked} name={checkBoxName} id={checkBoxName} onChange={() => handleCheck(props.index)}/>
+          <input className="checkbox" type="checkbox" defaultChecked={have} name={checkBoxName} id={checkBoxName} onChange={() => handleCheck(props.index)}/>
           <label for={checkBoxName}>{props.data.item.name}</label>
         </div>
       </div>

@@ -25,15 +25,8 @@ function App() {
     setCollections(setList)
   }
 
-  async function handleCollectionChange(coll, collName) {
-    if (JSON.parse(localStorage['cardsIHave'])[collName]) {
-      setCardsIHave(JSON.parse(localStorage['cardsIHave'])[collName])
-
-    } else {
-      setCardsIHave([])
-    }
+  function handleCollectionChange(coll, collName) {
     setMyCollections(coll, collName);
-    setCount(cardsIHave.length);
   }
   function setMyCollections (coll, collName) {
     setCollectionName(collName);
@@ -41,22 +34,30 @@ function App() {
   }
 
 
-  function handleCardsIHave(myCards) {
-    //cardsIHave = localStorage.getItem('cardsIHave'[collectionName]) || myCards;
+  async function asyncEffect() {
+    await getCards(collection);
+    if (JSON.parse(localStorage['cardsIHave'])[collectionName]) {
+      setCardsIHave(JSON.parse(localStorage['cardsIHave'])[collectionName]);
+    } else {
+      setCardsIHave([]);
+    }
   }
 
   useEffect(() => {
     getSets();
   }, [collections.length]);
 
-
   useEffect(() => {
-    getCards(collection);
-  }, [collection]); 
+    asyncEffect();
+  }, [collection])
+  
+  useEffect(() => {
+    setCount(cardsIHave.length);
+  }, [cardsIHave.length]); 
   return (
     <div className="App">
       <Collections collections={collections} handleChange={(coll, collName) => handleCollectionChange(coll, collName)}/>
-      {cards.length > 0 ? <Collection setCount={setCount} setCardsIHave={handleCardsIHave} data={{collection: collectionName, cards, count, cardsIHave}} /> : null}
+      {cards.length > 0 ? <Collection setCount={setCount} data={{collection: collectionName, cards, count, cardsIHave}} /> : null}
     </div>
   );
 }

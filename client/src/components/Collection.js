@@ -1,24 +1,29 @@
-
 import '../styles/Collection.scss';
-import {useState} from 'react';
 import Card from './Card';
 
 
 export default function Collection(props) {
-  const [cardsIHave, setCardsIHave] = useState(props.data.cardsIHave);
+  let cardsIHave = props.data.cardsIHave;
 
   const count = props.data.count;
   const collection = props.data.collection;
   const cardsInCollection = props.data.cards;
 
   const addToCollection = (card) => {
-    cardsIHave.push(card);
-    setCardsIHave(cardsIHave.sort((a,b) => a-b));
+
+    if (cardsIHave.indexOf(card) === -1) {
+      cardsIHave.push(card);
+      cardsIHave = cardsIHave.sort((a,b) => a-b);
+    }
+    //props.data.setCardsIHave(cardsIHave);
   };
   const removeFromCollection = (card) => {
     const ind = cardsIHave.indexOf(card);
-    cardsIHave.splice(ind, 1);
-    setCardsIHave(cardsIHave);
+    if (ind !== -1) {
+      cardsIHave.splice(ind, 1);
+      cardsIHave = cardsIHave;
+    }
+    //props.data.setCardsIHave(cardsIHave);
   }
 
   const saveCards = (cards) => {
@@ -28,7 +33,8 @@ export default function Collection(props) {
       localStorage.setItem('cardsIHave', JSON.stringify(myCards));
     } else {
       localStorage.setItem('cardsIHave', JSON.stringify({[collection]: cards}));
-    }    
+    } 
+    alert('Successfully updated your collection!');   
   }
   return(
     <div className="collection">
@@ -40,7 +46,7 @@ export default function Collection(props) {
         const have = cardsIHave.indexOf(index) !== -1;
         return(
         <div key={index} className='item'>
-          <Card data={{item, have:have}} checked={have} addToCollection={addToCollection} removeFromCollection={removeFromCollection} count={count} total={cardsInCollection.length} handleCount={props.setCount} index={index} src='https://www.popsockets.com/dw/image/v2/BFSM_PRD/on/demandware.static/-/Sites-popsockets-master-catalog/default/dw9eb9511a/images/hi-res/Poke-Ball-Gloss_01_Top-View.png?sw=800&sh=800' />
+          <Card data={{item, have, collection}} addToCollection={addToCollection} removeFromCollection={removeFromCollection} count={count} total={cardsInCollection.length} handleCount={props.setCount} index={index} src='https://www.popsockets.com/dw/image/v2/BFSM_PRD/on/demandware.static/-/Sites-popsockets-master-catalog/default/dw9eb9511a/images/hi-res/Poke-Ball-Gloss_01_Top-View.png?sw=800&sh=800' />
         </div>
         )
       })}
