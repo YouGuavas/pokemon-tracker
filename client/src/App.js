@@ -26,9 +26,6 @@ function App() {
   }
 
   function handleCollectionChange(coll, collName) {
-    setMyCollections(coll, collName);
-  }
-  function setMyCollections (coll, collName) {
     setCollectionName(collName);
     setCollection(coll);
   }
@@ -49,6 +46,7 @@ function App() {
 
   useEffect(() => {
     asyncEffect();
+    console.log(cardsIHave);
   }, [collection])
   
   useEffect(() => {

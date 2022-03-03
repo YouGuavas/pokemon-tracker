@@ -3,7 +3,6 @@ import { useState } from 'react';
 
 
 export default function Card(props) {
-  //const [have, setHave] = useState(props.data.have);
   let have = props.data.have;
   const handleCheck = (index) => {
     const thisCard = document.getElementById(index);
@@ -45,8 +44,8 @@ export default function Card(props) {
         </div>
         <div className="card-plaque">
         <div className="label-wrapper">
-          <input className="checkbox" type="checkbox" defaultChecked={have} name={checkBoxName} id={checkBoxName} onChange={() => handleCheck(props.index)}/>
-          <label for={checkBoxName}>{props.data.item.name}</label>
+          <input className="checkbox" type="checkbox" checked={have} name={checkBoxName} id={checkBoxName} onChange={() => handleCheck(props.index)}/>
+          <label htmlFor={checkBoxName}>{props.data.item.name}</label>
         </div>
       </div>
       </div>
