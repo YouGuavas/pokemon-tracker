@@ -18,8 +18,8 @@ export default function Collections(props) {
   }, [collections.length])
   
   return (
-    <div>
-      <select onChange={handleChange}>
+    <div className="collections-background">
+      <select className="collections" onChange={handleChange}>
 
         {
           collections.map((item, index) => (

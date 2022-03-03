@@ -1,12 +1,20 @@
 @import '../utilities/_variables';
 
-$grid-gap: '20px';
 
 .collection {
   height: auto;
   width: auto;
-  background-color: lightslategrey;
+  background-color: $background;
   color: white;
+  padding: 1rem;
+  .collection-container {
+    padding: 0.7rem;
+    background-color: lightslategrey;
+    box-shadow: 0 0 7px 1px black inset;
+  }
+  h1 {
+    margin-top: 0;
+  }
 }
 
 .submit-button {
@@ -17,7 +25,12 @@ $grid-gap: '20px';
   font-size: 1.2rem;
   font-weight: 700;
   border-radius: 0.5rem;
-  border: 1px solid white;
+  border: 2px solid white;
+
+  &:focus {
+    outline: $outline;
+  }
+
 }
 
 .grid {

@@ -1,0 +1,25 @@
+@import '../utilities/_variables';
+
+.collections-background {
+ position: relative;
+ z-index: 10;
+ height: auto;
+ width: auto;
+ padding: 2rem 0;
+ background-color: $main;
+ box-shadow: 0 0 20px 5px $main;
+}
+.collections {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: $background;
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border: 2px solid white;
+
+  &:focus {
+    outline: $outline;
+  }
+
+}

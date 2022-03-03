@@ -1,8 +1,9 @@
 @use 'sass:math';
 
-$main: darkblue;
+$main: rgb(0, 0, 110);
 $accent: #e3e030;
-$background: rgb(0, 0, 220);
+$background: rgb(0, 0, 210);
+$greyed: rgb(50, 50, 50);
 
 $card-width: 10rem;
 $card-height: 15rem;
@@ -19,3 +20,7 @@ $sm-max: 768px;
 $font-size: 1rem;
 $font-size-md: 1rem;
 $font-size-sm: 0.8rem;
+
+$grid-gap: 1.3rem;
+
+$outline: 3px solid $accent;

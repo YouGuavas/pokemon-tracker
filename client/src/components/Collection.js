@@ -47,7 +47,7 @@ export default function Collection(props) {
       <h1>{collection}</h1>
       <h2>{count}/{cardsInCollection.length} cards - {(100*(count/cardsInCollection.length)).toFixed(2)}% complete</h2>
       <button className="submit-button" onClick={() => saveCards(cardsIHave)}>Submit</button>
-      <div className="grid">
+      <div className="grid collection-container">
       
       {
       /*Render cards in collection*/

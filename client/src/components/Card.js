@@ -29,24 +29,23 @@ export default function Card(props) {
     <div className="" key={props.index}>
       <div className="card">
         <div className="card-inner">
-          
-          {/*Create the front of the card*/}
-          <div className={have ? "poke-front" : "card-front"}>
-            <img className={have ? "back-img" : "front-img"} id={have ? props.index : `${props.index}-alt`} src={have ? props.data.item.src : props.src} />
-          </div>
+            {/*Create the front of the card*/}
+            <div className={have ? "poke-front" : "card-front"}>
+              <img className={have ? "back-img" : "front-img"} id={have ? props.index : `${props.index}-alt`} src={have ? props.data.item.src : props.src} />
+            </div>
 
-          {/*Create the back of the card*/}
-          <div className={have ? "poke-back" : "card-back"}>
-            <img className={have ? "front-img" : "back-img greyed"} id={have ? `${props.index}-alt` : props.index} src={have ? props.src : props.data.item.src} />
-          </div>
-          
+            {/*Create the back of the card*/}
+            <div className={have ? "poke-back" : "card-back"}>
+              <img className={have ? "front-img" : "back-img greyed"} id={have ? `${props.index}-alt` : props.index} src={have ? props.src : props.data.item.src} />
+            </div>
+            
         </div>
         <div className="card-plaque">
-        <div className="label-wrapper">
-          <input className="checkbox" type="checkbox" checked={have} name={checkBoxName} id={checkBoxName} onChange={() => handleCheck(props.index)}/>
-          <label htmlFor={checkBoxName}>{props.data.item.name}</label>
+          <div className="label-wrapper">
+            <input className="checkbox" type="checkbox" checked={have} name={checkBoxName} id={checkBoxName} onChange={() => handleCheck(props.index)}/>
+            <label htmlFor={checkBoxName}>{props.data.item.name}</label>
+          </div>
         </div>
-      </div>
       </div>
     </div>
   )
