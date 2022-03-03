@@ -8,6 +8,7 @@ $grid-gap: '20px';
   background-color: lightslategrey;
   color: white;
 }
+
 .submit-button {
   margin-bottom: 10px;
   background-color: $background;
@@ -27,13 +28,17 @@ $grid-gap: '20px';
   justify-items: center;
   align-content: space-evenly;
   align-items: center;
+
   @media only screen and (max-width:$md-max) and (min-width:$sm-max) {
     grid-template-columns: repeat(4, auto);
   }
+  
   @media only screen and (max-width:$sm-max) {
     grid-template-columns: repeat(4, auto);
-   }
+  }
+
 }
+
 .grid .item {
   grid-column: span 1 / span 1;
   width: auto;

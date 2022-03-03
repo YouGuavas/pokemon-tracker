@@ -9,19 +9,21 @@
   margin: 0 auto 1rem auto;
   perspective: 600px;
   position: relative;
+  
   @media only screen and (max-width:$md-max) and (min-width:$sm-max) {
     height: $card-height-md;
     width: $card-width-md;
     margin: 0 auto 1.2rem auto;
-
   }
+  
   @media only screen and (max-width:$sm-max) {
     height: $card-height-sm;
     width: $card-width-sm;
     margin: 0 auto 1.2rem auto;
+  }
 
-   }
 }
+
 .greyed {
   opacity: 0.6;
 }
@@ -35,28 +37,33 @@
   color: white;
   padding: 0.2rem 0 0.2rem 0;
   margin: 0.2rem 0;
+  
   @media only screen and (max-width:$md-max) and (min-width:$sm-max) {
     width: $card-width-md;
   }
+  
   @media only screen and (max-width:$sm-max) {
     width: $card-width-sm;
-   }
+  }
+
   .label-wrapper {
     height: 100%;
   }
-  
-
 
   input[type="checkbox"].checkbox {
     display: none;
+
     +label {
       font-size: 1rem;
+
       @media only screen and (max-width:$md-max) and (min-width:$sm-max) {
         font-size: $font-size-md;
       }
+
       @media only screen and (max-width:$sm-max) {
         font-size: $font-size-sm;
-       }
+      }
+
     }
   }
 
@@ -73,17 +80,15 @@
     background-color: $background;
     margin: 0 0.2rem 0 0;
   }
+
   input[type="checkbox"]:checked+label::before {
     content: "✔";
     text-align: center;
     line-height: 1rem;
   }
-  
+
 }
 
-.carad {
-  display: hidden;
-}
 .front-img {
   position: absolute;
   height: math.div($card-height, 2);
@@ -96,14 +101,14 @@
     height: math.div($card-height-md, 2);
     width: math.div($card-height-md, 2);
   }
+
   @media only screen and (max-width:$sm-max) {
     height: math.div($card-height-sm, 2);
     width: math.div($card-height-sm, 2);
-   }
+  }
 }
 .back-img {
   position: absolute;
-
   height: $card-height;
   width: $card-width;
   top:50%;
@@ -114,10 +119,12 @@
     height: $card-height-md;
     width: $card-width-md;
   }
+
   @media only screen and (max-width:$sm-max) {
     height: $card-height-sm;
     width: $card-width-sm;
-   }
+  }
+
 }
 
 
@@ -148,19 +155,21 @@
   width: $card-width - 1rem;
   border: 0.5rem solid $main;
   color: white;
+  
   @media only screen and (max-width:$md-max) and (min-width:$sm-max) {
     height: $card-height-md - 1rem;
     width: $card-width-md - 1rem;
   }
+
   @media only screen and (max-width:$sm-max) {
     height: $card-height-sm - 1rem;
     width: $card-width-sm - 1rem;
-   }
+  }
+
 }
 
 .poke-front, .card-back {
   background-color: transparent;
-
 }
 
 .card-back, .poke-back {
