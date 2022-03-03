@@ -1,9 +1,10 @@
-import React, {useEffect, useState} from 'react';
-
+import React, {useEffect} from 'react';
 import '../styles/Collections.scss';
 
 export default function Collections(props) {
+
   const collections = props.collections;
+
   function handleChange(event) {
     const target = JSON.parse(event.target.value);
     const collectionId = target.id;
@@ -18,15 +19,19 @@ export default function Collections(props) {
   
   return (
     <div>
-
       <select onChange={handleChange}>
-        {collections.map((item, index) => (
-        <option key={index} value={JSON.stringify(item)}>
-          {item.name}
-        </option>
-        ))}
-      </select>
 
+        {
+          collections.map((item, index) => (
+
+            <option key={index} value={JSON.stringify(item)}>
+              {item.name}
+            </option>
+
+          ))
+        }
+
+      </select>
     </div>
   )
 }

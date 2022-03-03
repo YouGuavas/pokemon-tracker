@@ -1,5 +1,4 @@
 import '../styles/Card.scss';
-import { useState } from 'react';
 
 
 export default function Card(props) {
@@ -29,16 +28,17 @@ export default function Card(props) {
     <div className="" key={props.index}>
       <div className="card">
         <div className="card-inner">
+
           {/*Create the front of the card*/}
+
           <div className={have ? "poke-front" : "card-front"}>
-            {have ? <img className="back-img" id={props.index} src={props.data.item.src} /> : <img className="front-img" src={props.src} id={`${props.index}-alt`}/>}
+            <img className={have ? "back-img" : "front-img"} id={have ? props.index : `${props.index}-alt`} src={have ? props.data.item.src : props.src} />
           </div>
 
           {/*Create the back of the card*/}
 
           <div className={have ? "poke-back" : "card-back"}>
-            {have ? <img className="front-img" src={props.src} id={`${props.index}-alt`} /> : <img className="back-img greyed" id={props.index} src={props.data.item.src} />}
-
+            <img className={have ? "front-img" : "back-img"} id={have ? `${props.index}-alt` : props.index} src={have ? props.src : props.data.item.src} />
           </div>
           
         </div>
