@@ -1,4 +1,4 @@
-const api_uri = 'http://localhost:5000/';
+const api_uri = 'http://localhost:4994/';
 const axios = require('axios');
 
 const getCardsFromSet = (cardSet) => {
