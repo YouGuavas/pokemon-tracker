@@ -2,7 +2,6 @@ import '../styles/Card.scss';
 
 
 export default function Card(props) {
-  const vw = screen.width >= 992;
   let have = props.data.have;
   const handleCheck = (index) => {
     const thisCard = document.getElementById(index);
@@ -25,7 +24,6 @@ export default function Card(props) {
     }
   }
   const checkBoxName = `Card${props.index}`;
-  if (vw === true) {
     return(
     <div className="" key={props.index}>
       <div className="card">
@@ -49,27 +47,5 @@ export default function Card(props) {
         </div>
       </div>
     </div>
-  )} else {
-    return(
-    <div className="" key={props.index}>
-      <div className="card">
-        <div className="card-inner">
-
-            {/*Create the card*/}
-            <div className="card-back">
-              <img alt={""} className={have ? "back-img" : "back-img greyed"} id={props.index} src={props.data.item.src} />
-            </div>
-            
-        </div>
-        <div className="card-plaque">
-          <div className="label-wrapper">
-            <input className="checkbox" type="checkbox" checked={have} name={checkBoxName} id={checkBoxName} onChange={() => handleCheck(props.index)}/>
-            <label htmlFor={checkBoxName}>{props.data.item.name}</label>
-          </div>
-        </div>
-      </div>
-    </div>
-    )
-  }
-
+  )
 }
