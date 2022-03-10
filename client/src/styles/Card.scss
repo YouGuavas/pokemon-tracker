@@ -141,7 +141,9 @@
   border-radius: 0.2rem;
 }
 .card:hover .card-inner {
-  transform: rotateY(180deg);
+  @media only screen and (min-width:$md-max) {
+    transform: rotateY(180deg);
+  }
 }
 
 .card-front, .card-back, .poke-front, .poke-back {
@@ -176,6 +178,8 @@
 }
 
 .card-back, .poke-back {
-  transform: rotateY(180deg);
+  @media only screen and (min-width:$md-max) {
+    transform: rotateY(180deg);
+  }
 }
 
