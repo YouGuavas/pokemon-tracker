@@ -1,5 +1,6 @@
 import '../styles/Collection.scss';
 import Card from './Card';
+import {pokeBall} from '../images/pokeball.png';
 
 
 export default function Collection(props) {
@@ -56,7 +57,8 @@ export default function Collection(props) {
         return(
 
           <div key={index} className='item'>
-            <Card data={{item, have, collection}} addToCollection={addToCollection} removeFromCollection={removeFromCollection} count={count} total={cardsInCollection.length} handleCount={props.setCount} index={index} src='https://www.popsockets.com/dw/image/v2/BFSM_PRD/on/demandware.static/-/Sites-popsockets-master-catalog/default/dw9eb9511a/images/hi-res/Poke-Ball-Gloss_01_Top-View.png?sw=800&sh=800' />
+            {/*https://www.popsockets.com/dw/image/v2/BFSM_PRD/on/demandware.static/-/Sites-popsockets-master-catalog/default/dw9eb9511a/images/hi-res/Poke-Ball-Gloss_01_Top-View.png?sw=800&sh=800 */}
+            <Card data={{item, have, collection}} addToCollection={addToCollection} removeFromCollection={removeFromCollection} count={count} total={cardsInCollection.length} handleCount={props.setCount} index={index} src={pokeBall} />
           </div>
 
           )
