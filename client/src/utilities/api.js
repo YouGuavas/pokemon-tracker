@@ -1,4 +1,4 @@
-const api_uri = 'https://pokemon-collection.tracker.herokuapp.com/';
+const api_uri = 'https://pokemon-collection-tracker.herokuapp.com/';
 const axios = require('axios');
 
 const getCardsFromSet = (cardSet) => {
