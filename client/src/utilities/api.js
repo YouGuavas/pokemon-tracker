@@ -1,4 +1,4 @@
-const api_uri = 'http://localhost:4994/';
+const api_uri = 'http://pokemon-collection.tracker.herokuapp.com/';
 const axios = require('axios');
 
 const getCardsFromSet = (cardSet) => {
