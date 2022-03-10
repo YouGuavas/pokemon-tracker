@@ -1,6 +1,6 @@
 import '../styles/Collection.scss';
 import Card from './Card';
-import {pokeBall} from '../images/pokeball.png';
+import pokeBall from '../images/pokeball.png';
 
 
 export default function Collection(props) {
