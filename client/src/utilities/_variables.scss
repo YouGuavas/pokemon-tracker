@@ -11,8 +11,8 @@ $card-height: 15rem;
 $card-width-md: math.div(3, 4) * $card-width;
 $card-height-md: math.div(3, 4) * $card-height;
 
-$card-width-sm: math.div(2, 3) * $card-width;
-$card-height-sm: math.div(2, 3) * $card-height;
+$card-width-sm: math.div(3, 5) * $card-width;
+$card-height-sm: math.div(3, 5) * $card-height;
 
 $md-max: 992px;
 $sm-max: 768px;
