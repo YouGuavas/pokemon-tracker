@@ -2,7 +2,7 @@ import '../styles/Card.scss';
 
 
 export default function Card(props) {
-  const vw = window.innerWidth >= 992;
+  const vw = screen.width >= 992;
   let have = props.data.have;
   const handleCheck = (index) => {
     const thisCard = document.getElementById(index);
